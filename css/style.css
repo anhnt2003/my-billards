@@ -10,6 +10,7 @@ body, html {
   }
   
   .container {
+    padding-left: 10px;
     /* The image used */
     background-image: url("../image/bg_billard2.jpg");
   
