@@ -21,7 +21,7 @@ function createPlayer() {
       playerFormsDiv.innerHTML += playerForm;
     });
 
-    playerFormsDiv.innerHTML += `<button id="scoreSubmit" onclick="submitScore()">Submit score</button> <br>`
+    playerFormsDiv.innerHTML += `<button id="scoreSubmit" onclick="submitScore()">Xác nhận kết quả trận</button> <br>`
 
     players.forEach((name) => totalScore.push({ name: name, score: 0 }));
 }
@@ -43,6 +43,10 @@ function submitScore() {
     totalScore.forEach((player, index) => {
         player.score += parseInt(document.getElementById(`player${index}`).value);
     });
+
+    for(let i = 0; i < numPlayer; i++) { 
+        document.getElementById(`player${i}`).value = '';
+    }
     showResult(player);
 }
 
