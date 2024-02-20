@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My-Billards</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Ứng dụng Ghi điểm Bi-a</h1>
+        <br>
+        <label for="gameType">Chọn thể thức:</label>
+        
+        <select id="gameType">
+            <option value="9-Ball">9 Bi Đền</option>
+            <option value="8-Ball">8 Bi Lá</option>
+        </select>
+        <br>
+
+        <div class="inputPlayer">
+            <label for="player">Tên Người Chơi:</label>
+            <input type="text" id="player">
+            <button onclick="createPlayer()">Tạo</button>
+        </div>
+
+        <div class="result" id="result" onload="showResult()"></div>
+
+        <div class="playersForm" id="playersForm">
+        </div>
+        <div class="total" id="total"></div>
+        <button onclick="totalScoreLast()">Kết quả cuối</button>
+    </div>
+</body>
+</html>
