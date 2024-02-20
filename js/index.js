@@ -34,10 +34,6 @@ function submitScore() {
             name: document.getElementById(`playerName${i}`).innerText,
             score: document.getElementById(`player${i}`).value
         };
-        if(playersScore.score === '') {
-            alert('Vui loại điền điểm');
-            return;
-        };
         player.push(playersScore);
     }
     totalScore.forEach((player, index) => {
@@ -45,7 +41,7 @@ function submitScore() {
     });
 
     for(let i = 0; i < numPlayer; i++) { 
-        document.getElementById(`player${i}`).value = '';
+        document.getElementById(`player${i}`).value = 0;
     }
     showResult(player);
 }
