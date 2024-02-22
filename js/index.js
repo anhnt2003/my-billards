@@ -16,7 +16,7 @@ function createPlayer() {
         let playerForm = `
       <div class="playerInfo">
         <span id="playerName${index}" style="min-width: 50px" >${name}</span> 
-        <input type="number" id="player${index}" name="player${index}}" value="0"> 
+        <input type="number" placeholder="0" id="player${index}" name="player${index}}"> 
       </div>
       <br>
     `;
@@ -32,22 +32,20 @@ function createPlayer() {
 }
 
 function submitScore() {
+    caculatorTotalScore();
     let numPlayer = document.getElementById("player").value.split(',').length;
     let player = [];
     for (let i = 0; i < numPlayer; i++) {
-
+        let elementName = document.getElementById(`playerName${i}`);
+        let elementScore = document.getElementById(`player${i}`);
         let playersScore = {
-            name: document.getElementById(`playerName${i}`).innerText,
-            score: document.getElementById(`player${i}`).value
+            name: elementName.innerText,
+            score: elementScore.value ? elementScore.value : 0
         };
         player.push(playersScore);
+        elementScore.value = null;
     }
 
-    caculatorTotalScore();
-
-    for (let i = 0; i < numPlayer; i++) {
-        document.getElementById(`player${i}`).value = 0;
-    }
     showResult(player);
 }
 
@@ -78,7 +76,7 @@ function deleteResult(roundId) {
 
 function caculatorTotalScore() {
     totalScore.forEach((player, index) => {
-        player.score += parseInt(document.getElementById(`player${index}`).value);
+        player.score += parseInt(document.getElementById(`player${index}`).value) || 0;
     });
 }
 
