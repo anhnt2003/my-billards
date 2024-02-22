@@ -14,8 +14,10 @@ function createPlayer() {
 
     players.forEach((name, index) => {
         let playerForm = `
-      <label id="playerName${index}" >${name}</label> 
-      <input type="number" id="player${index}" name="player${index}}"> 
+      <div class="playerInfo">
+        <span id="playerName${index}" style="min-width: 50px" >${name}</span> 
+        <input type="number" id="player${index}" name="player${index}}" value="0"> 
+      </div>
       <br>
     `;
 
@@ -25,6 +27,8 @@ function createPlayer() {
     playerFormsDiv.innerHTML += `<button id="scoreSubmit" onclick="submitScore()">Xác nhận kết quả trận</button> <br>`;
 
     players.forEach((name) => totalScore.push({ name: name, score: 0 }));
+
+    document.getElementById("inputPlayer").style.display = "none";
 }
 
 function submitScore() {

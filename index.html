@@ -11,25 +11,35 @@
     <div class="container">
         <h1>Ứng dụng Ghi điểm Bi-a</h1>
         <br>
-        <label for="gameType">Chọn thể thức:</label>
-        
-        <select id="gameType">
-            <option value="9-Ball">9 Bi Đền</option>
-            <option value="8-Ball">8 Bi Lá</option>
-        </select>
+        <div class="selectOption">
+            <label for="gameType">Chọn thể thức:</label>
+            
+            <select id="gameType">
+                <option value="9-Ball">9 Bi Đền</option>
+                <option value="8-Ball">8 Bi Lá</option>
+            </select>
+        </div>
         <br>
 
-        <div class="inputPlayer">
+        <div class="inputPlayer" id="inputPlayer">
             <label for="player">Tên Người Chơi:</label>
-            <input type="text" id="player">
+            <input type="text" id="player" placeholder="player1, player2, ...">
             <button onclick="createPlayer()">Tạo</button>
         </div>
+
         <div class="playersForm" id="playersForm">
+            <!-- innerHTML form nhập kết quả người chơi -->
         </div>
-        <div class="total" id="total"></div>
+
+        <div class="total" id="total">
+            <!-- innerHTML kết quả cuối cùng -->
+        </div>
+
         <button onclick="totalScoreLast()">Kết quả cuối</button>
 
-        <div class="result" id="result" onload="showResult()"></div>
+        <div class="result" id="result" onload="showResult()">
+            <!-- innerHTML lịch sử trận đấu -->
+        </div>
     </div>
 </body>
 </html>
